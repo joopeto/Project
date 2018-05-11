@@ -1,0 +1,45 @@
+Boxer one = new Boxer("Pesho",20);
+Boxer two = new Boxer("Kiro",60);
+
+System.out.println("Winer is "+ boxingDay(one,two));
+}
+public static String boxingDay(Boxer first, Boxer second){
+if(first.getPower()>second.getPower())
+return first.getName();
+else return second.getName();
+
+}
+}
+class Boxer{
+private String name;
+private int power;
+Boxer(String n,int a){
+setName(n);
+setPower(a);
+      
+}
+void setPower(int power){
+ if(power>100)
+     power=100;
+ if(power<0)
+     power=0;
+   this.power=power;
+}
+int getPower(){
+
+return power;
+
+}
+String getName(){
+
+return name;
+
+}
+void setName(String name){
+    for (int i = 0; i < name.length(); i++) {
+        if(name.charAt(i)>='0'&&name.charAt(i)<='9')
+            name= "NullBoxer";
+            
+        
+    }
+this.name=name;
